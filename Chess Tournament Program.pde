@@ -21,11 +21,12 @@ public void setup() {
   textAlign(CENTER, CENTER);
 }
 public void draw() {
+  fill(132);
+  rect(100,100,50,50);
   fill(0);
   frameRate(10);
   //Standings
   background(152, 190, 100);
-  fill(0);
   line(500, 0, 500, 1000);
   textSize(30);
   text("Tournament Standing:", 250, 50);
@@ -65,7 +66,6 @@ public void draw() {
     text((float)rounds.getPlayers().get(m).getPlayerScore(), 400, 150 + gap3);
     gap3 += 25;
   }
-  
   //Display Pairings
   if (newRound == true) {
     rounds.pairings();
@@ -87,10 +87,11 @@ public void keyPressed() {
     newRound = true;
     rounds.incrementRounds();
   }
+  if (key == 's') {
+    newRound = false;
+  }
   if(key == 's'){
     rounds.scoreSort();
     rounds.ratingSort();
-    newRound = false;
   }
 }
-
