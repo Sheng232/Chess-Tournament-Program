@@ -3,13 +3,17 @@ public class TournamentRound {
   private int rounds;
   public TournamentRound() {
     //Place Holder Name
-    for (int i = 1; i <= 16; i++) {
-      players.add(new Player("player"+ i, i, 0, i));
-    }
-    //Place Holder Rating
-    for (int j = 0; j < 16; j++) {
-      players.get(j).setRating((int)(Math.random() * 2000));
-    }
+    //for (int i = 1; i <= 16; i++) {
+    //  players.add(new Player("player"+ i, i, 0, i));
+    //}
+    ////Place Holder Rating
+    //for (int j = 0; j < 16; j++) {
+    //  players.get(j).setRating((int)(Math.random() * 2000));
+    //}
+    players.add(new Player("Bob", 2000, 0, 1));
+    players.add(new Player("Brody", 1900, 0, 2));
+    players.add(new Player("Tom", 1500, 0, 3));
+    players.add(new Player("Timmy", 1200, 0, 4));
     rounds = 0;
   }
   public int getRounds() {
