@@ -10,10 +10,18 @@ public class TournamentRound {
     //for (int j = 0; j < 16; j++) {
     //  players.get(j).setRating((int)(Math.random() * 2000));
     //}
-    players.add(new Player("Bob", 2000, 0, 1));
-    players.add(new Player("Brody", 1900, 0, 2));
-    players.add(new Player("Tom", 1500, 0, 3));
-    players.add(new Player("Timmy", 1200, 0, 4));
+   players.add(new Player("Vince", 1, 0, 1));
+    players.add(new Player("Ean", 2, 0, 2));
+    players.add(new Player("Charlotte", 3, 0, 3));
+    players.add(new Player("Tomas", 4, 0, 4));
+    players.add(new Player("Freddie", 5, 0, 5)); 
+    players.add(new Player("Auden", 6, 0, 6));
+    players.add(new Player("Matty", 7, 0, 7));
+    players.add(new Player("Alex M", 8, 0, 8));
+    players.add(new Player("Alex D", 9, 0, 9));
+    players.add(new Player("Victor", 10, 0, 10));
+    players.add(new Player("Mac", 11, 0, 11));
+    players.add(new Player("Ian", 12, 0, 12));
     rounds = 0;
   }
   public int getRounds() {
