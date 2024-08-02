@@ -1,13 +1,14 @@
 private TournamentRound rounds = new TournamentRound();
 private Button roundButton = new Button(740,770,50,30);
 private Button sortButton = new Button(740,870,50,30);
-//private TextField testTextField = new TextField(900,900,50,50);
+private TextField testTextField = new TextField(20,70,70,20);
 private ArrayList<Button> playerPlusButtons = new ArrayList<Button>();
 private ArrayList<Button> playerMinusButtons = new ArrayList<Button>();
 private boolean newRound = false;
 private int buttonGap = 0;
 private int buttonGap2 = 0;
 public void setup() {
+  frameRate(10);
   rounds.scoreSort();
   rounds.ratingSort();
   for (int i = 0; i < rounds.getPlayers().size(); i++) {
@@ -26,7 +27,7 @@ public void setup() {
 }
 public void draw() {
   fill(0);
-  frameRate(10);
+  stroke(0);
   //Standings
   background(152, 190, 100);
   fill(0);
@@ -34,6 +35,8 @@ public void draw() {
   textSize(30);
   text("Tournament Standing:", 250, 50);
   text("Tournament Pairings: " + "round " + rounds.getRounds(), 750, 50);
+  textSize(12);
+  text("Add a player", 55,55);
   textSize(20);
   text("Name:", 100, 120);
   text("Rating:", 250, 120);
@@ -100,8 +103,11 @@ public void draw() {
   sortButton.mouseSortPress();
   
   //Display textField
-  //testTextField.drawTextField();
-  //testTextField.mousePressed();
-  //testTextField.keyPressed();
+  testTextField.drawTextField();
 }
-
+public void mousePressed(){
+  testTextField.textMousePressed();
+}
+public void keyPressed(){
+  testTextField.textKeyPressed();
+}
