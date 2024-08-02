@@ -3,11 +3,11 @@ public class TournamentRound {
   private int rounds;
   public TournamentRound() {
     //Place Holder Name
-    for (int i = 1; i <= 32; i++) {
+    for (int i = 1; i <= 16; i++) {
       players.add(new Player("player"+ i, i, 0, i));
     }
     //Place Holder Rating
-    for (int j = 0; j < 32; j++) {
+    for (int j = 0; j < 16; j++) {
       players.get(j).setRating((int)(Math.random() * 2000));
     }
     rounds = 0;
@@ -67,18 +67,19 @@ public class TournamentRound {
     text("vs", 700, 150 + gap0);
     gap0 += 25;
   }
+  
     int gap = 0;
     //white Player
     for(int i = 0; i < players.size(); i+=2){
-      text(players.get(i).getPlayerName(), 600, 150 + gap);
-      text("(" + players.get(i).getRating() + ")", 550, 150 + gap); 
+      text(players.get(i).getPlayerName() + "(" + players.get(i).getPlayerScore() + ")", 620, 150 + gap);
+      text("(" + players.get(i).getRating() + ")", 550, 150 + gap);
       gap += 25;
     }
     int gap1 = 0;
     //Black Player
     for(int i = 1; i < players.size(); i+=2){
-      text(players.get(i).getPlayerName(), 800, 150 + gap1);
-      text("(" + players.get(i).getRating() + ")", 750, 150 + gap1); 
+      text(players.get(i).getPlayerName() + "(" + players.get(i).getPlayerScore() + ")", 820, 150 + gap1);
+      text("(" + players.get(i).getRating() + ")", 750, 150 + gap1);
       gap1 += 25;
     }
   }
