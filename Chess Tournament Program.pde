@@ -1,4 +1,7 @@
 private TournamentRound rounds = new TournamentRound();
+private Button roundButton = new Button(740,770,50,30);
+private Button sortButton = new Button(740,870,50,30);
+//private TextField testTextField = new TextField(900,900,50,50);
 private ArrayList<Button> playerPlusButtons = new ArrayList<Button>();
 private ArrayList<Button> playerMinusButtons = new ArrayList<Button>();
 private boolean newRound = false;
@@ -19,6 +22,7 @@ public void setup() {
   size(1000, 1000);
   textSize(10);
   textAlign(CENTER, CENTER);
+
 }
 public void draw() {
   fill(0);
@@ -35,8 +39,8 @@ public void draw() {
   text("Rating:", 250, 120);
   text("Score:", 400, 120);
   textSize(25);
-  text("Press Space to Start New Round", 750, 750);
-  text("Press S to Sort Tournament Standing", 750, 850);
+  text("Click Button to Start New Round", 750, 750);
+  text("Click Button to Sort Tournament Standing", 750, 850);
   textSize(20);
   //Pairings 
   if(rounds.getRounds() % 2 == 0){
@@ -56,7 +60,7 @@ public void draw() {
   //Display Player Name
   int gap = 0;
   for (int i = 0; i < rounds.getPlayers().size(); i++) {
-    text(rounds.getPlayers().get(i).getPlayerName() + "(" + rounds.getPlayers().get(i).getId() + ")", 100, 150 + gap);
+    text(rounds.getPlayers().get(i).getPlayerName(), 100, 150 + gap);
     gap += 25;
   } //Display Player Rating 
   int gap2 = 0;
@@ -76,7 +80,7 @@ public void draw() {
   if (newRound == true) {
     rounds.pairings();
   }
-  //Display Buttons
+  //Display increment/decrement Buttons
   for (int i = 0; i < rounds.getPlayers().size(); i++) {
     playerPlusButtons.get(i).drawPlusButton();
     playerPlusButtons.get(i).mousePlusPress();
@@ -87,17 +91,17 @@ public void draw() {
     playerMinusButtons.get(i).mouseMinusPress();
     playerMinusButtons.get(i).updateMinusButtons();
   }
+  //Display Round Button
+  roundButton.drawRoundButton();
+  roundButton.mouseRoundPress();
+  
+  //Display Sort Button
+  sortButton.drawSortButton();
+  sortButton.mouseSortPress();
+  
+  //Display textField
+  //testTextField.drawTextField();
+  //testTextField.mousePressed();
+  //testTextField.keyPressed();
 }
-public void keyPressed() {
-  if (key == ' ') {
-    newRound = true;
-    rounds.scoreSort();
-    rounds.ratingSort();
-    rounds.incrementRounds();
-  }
-  if(key == 's'){
-    rounds.scoreSort();
-    rounds.ratingSort();
-    newRound = false;
-  }
-}
+
