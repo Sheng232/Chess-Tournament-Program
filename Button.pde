@@ -13,8 +13,6 @@ public class Button{
     if(mousePressed){
       if(mouseX>x && mouseX < x+w && mouseY > y && mouseY < y+h){
         associatedPlayer.incrementPlayerScore();
-        System.out.println("Button pressed for player: " + associatedPlayer.getPlayerName());
-        System.out.println("New score: " + associatedPlayer.getPlayerScore());
         fill(0);
         rect(x,y,w,h);
       }
