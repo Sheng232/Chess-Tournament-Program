@@ -49,7 +49,7 @@ public class TournamentRound {
       if (sameScoreCount > 1) {
         for (int j = i; j < i + sameScoreCount - 1; j++) {
           for (int k = j + 1; k < i + sameScoreCount; k++) {
-            if (players.get(j).getRating() > players.get(k).getRating()) {
+            if (players.get(j).getRating() < players.get(k).getRating()) {
               // Swap based on rating
               Player temp = players.get(j);
               players.set(j, players.get(k));
